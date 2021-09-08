@@ -1,22 +1,29 @@
-# vagrant kubernetes bootstrap
-This repo bootstrap 2 ubuntu VMs which is used to create K8s.
+# Vagrant Kubernetes bootstrap
+This repo bootstraps 2 ubuntu VMs which is used to create Kubernetes.
 
-# pre-requirements
+# Pre-Requirements
+manage VMs locally with Virtualbox and HashiCorp Vagrant
 1. install virtualbox
+```
 brew install --cask virtualbox
+```
 for big sur, better download newest version from site https://www.virtualbox.org/wiki/Downloads
 2. install vagrant
+```
 brew install --cask vagrant
+```
 or download from https://www.vagrantup.com/downloads
  
-# usage
+# Usage
+## template
+clone the repo and cd to dir where vagrantfile is
 
 ## create VMs
 ```
-cd /Users/yourname/Documents/LocalHub/cka/local-k8s
+cd /Users/yourname/Documents/LocalHub/cka/local-kubernetes
 vagrant up
 ```
-This step creates 2 vms, configure them to run k8s.
+This step creates 2 vms, configure them to run kubernetes.
 
 ## init master
 #### Login to master
@@ -25,7 +32,7 @@ vagrant ssh master
 sudo su -
 ```
 
-#### Config proxy
+#### Config proxy (China Only)
 config proxy outside to allow/accelerate download.
 on host machine, get local ip if using proxy on host, otherwise skip.
 ```
@@ -37,7 +44,7 @@ export https_proxy=http://ip:port
 export http_proxy=http://ip:port
 ```
 
-#### Install Kubernetes preparation
+#### Installation preparation
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 ```
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
@@ -60,6 +67,8 @@ apt-get install -y \
 ```
 
 #### Install Docker
+Docker is most widely used container runtime. You can also find other container runtime in https://kubernetes.io/docs/setup/production-environment/container-runtimes/
+##### installation docs
 https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker
 https://docs.docker.com/engine/install/ubuntu/
 ```
@@ -123,7 +132,7 @@ sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 swapoff -a
 ```
 
-#### Unset proxy
+#### Unset proxy (China only)
 ```
 unset http_proxy
 unset https_proxy
