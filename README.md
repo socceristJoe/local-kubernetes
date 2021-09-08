@@ -8,6 +8,7 @@ manage VMs locally with Virtualbox and HashiCorp Vagrant
 brew install --cask virtualbox
 ```
 for big sur, better download newest version from site https://www.virtualbox.org/wiki/Downloads
+
 2. install vagrant
 ```
 brew install --cask vagrant
@@ -70,6 +71,7 @@ apt-get install -y \
 Docker is most widely used container runtime. You can also find other container runtime in https://kubernetes.io/docs/setup/production-environment/container-runtimes/
 ##### installation docs
 https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker
+
 https://docs.docker.com/engine/install/ubuntu/
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -165,7 +167,8 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 
 #### Install network addon
-Weavenet is my favourite, you can choose any
+Weavenet is my favourite, you can choose any.
+find more in https://kubernetes.io/docs/concepts/cluster-administration/networking/#the-kubernetes-network-model
 ```
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 ```
