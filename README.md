@@ -1,5 +1,12 @@
 # Vagrant Kubernetes bootstrap
 This repo bootstraps 2 ubuntu VMs which is used to create Kubernetes.
+<p float="left">
+<img src="/img/kubernetes-icon.svg" alt="Kubernetes logo" width="100"/>
+<img src="/img/Vagrant.png" alt="Vagrant logo" width="100"/>
+<img src="/img/Virtualbox_logo.png" alt="VirtualBox logo" width="100"/>
+<img src="/img/Moby-logo.png" alt="Docker logo" width="100"/>
+<img src="/img/weave-logo-png-transparent.png" alt="WeaveNet logo" width="100"/>
+</p>
 
 # Pre-Requirements
 manage VMs locally with Virtualbox and HashiCorp Vagrant
